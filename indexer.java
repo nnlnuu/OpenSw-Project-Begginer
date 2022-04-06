@@ -133,10 +133,10 @@ public class indexer {
 		objectInputstream.close();
 		
 		HashMap<String, String> hashMap = (HashMap)object;
-		Iterator<String> it = wfxMap.keySet().iterator();
+		Iterator<String> it = hashMap.keySet().iterator();
 		while(it.hasNext()) {
 			String key = it.next();
-			String value = wfxMap.get(key);
+			String value = hashMap.get(key);
 			System.out.println(key + " : " + value);
 		}
 		

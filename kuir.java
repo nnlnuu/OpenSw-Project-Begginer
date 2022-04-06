@@ -7,6 +7,9 @@ public class kuir {
 		String command = args[0];
 		String path = args[1];
 		
+		 String command2 = args[2]; String query = args[3];
+		 
+		
 		if(command.equals("-c")) {
 			makeCollection collection = new makeCollection(path);
 			collection.makeXml();
@@ -17,7 +20,12 @@ public class kuir {
 			//객체 생성
 			indexer index = new indexer(path);
 			index.postIndex();
-		}
+		} 
+			  else if(command.equals("-s")) { 
+				  if(command2.equals("-q")) { 
+					  searcher search = new searcher(path,query); 
+					  search.CalcSim(); } }
+			 
 	}
 
 }
