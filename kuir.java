@@ -23,8 +23,8 @@ public class kuir {
 		} 
 			  else if(command.equals("-s")) { 
 				  if(command2.equals("-q")) { 
-					  searcher search = new searcher(path,query); 
-					  search.CalcSim(); } }
+			searcher search = new searcher(path,query); 
+			search.CalcSim(); } }
 			 
 	}
 

@@ -57,6 +57,7 @@ public class makeCollection {
 		code.appendChild(body);
 
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
+		//TransformerFactory transformerFactory = new TransformerFactory();
 		Transformer transformer = transformerFactory.newTransformer();
 		transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
 		

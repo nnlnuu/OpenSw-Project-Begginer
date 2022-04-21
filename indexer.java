@@ -18,8 +18,6 @@ import org.w3c.dom.NodeList;
 
 public class indexer {
 	private String index_path;
-	
-	
 	public indexer(String path) {
 		// TODO Auto-generated constructor stub
 		this.index_path = path;
@@ -37,7 +35,7 @@ public class indexer {
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		
-		//파싱
+		//파싱 -> 파싱하면 태그별로 나눠짐 
 		Document document = dBuilder.parse(index_file);
 		document.getDocumentElement().normalize();
 		
@@ -67,12 +65,6 @@ public class indexer {
 				 }			
 			}
 		}
-		
-		/*// tfx hashMap 확인 
-		 * Iterator <String> iter = dfxMap.keySet().iterator(); Iterator<Integer>
-		 * iterInt = dfxMap.values().iterator(); while(iter.hasNext()) {
-		 * System.out.println(iter.next() + " " +iterInt.next() ); }
-		 */
 		for(int i = 0;i< nList.getLength();i++) {
 			HashMap<String,Double> tfxMap = new HashMap<String,Double>();
 			Node nNode = nList.item(i);
@@ -118,14 +110,14 @@ public class indexer {
 				}
 		}
 		
-		//파일 읽어오기 
+		//파일 읽어오기 -> index.post에 wfxMap을 쓰고 close 한다.
 		FileOutputStream fileStream = new FileOutputStream("./index.post");
 		ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileStream); 
 		
 		objectOutputStream.writeObject(wfxMap);
 		objectOutputStream.close();
 
-		//읽어온 파일에서 단어들
+		//읽어온 파일에서 단어들 쓰기 -> index.post를 읽어오고 Inputstream 닫기 
 		FileInputStream fstream = new FileInputStream("./index.post");
 		ObjectInputStream objectInputstream = new ObjectInputStream(fstream); 
 		
