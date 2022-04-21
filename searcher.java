@@ -138,7 +138,6 @@ public class searcher {
 				String[] splitedArr = arr[i].split(" ");
 				weight += queryMap.get(keyarr[i])*Double.parseDouble(splitedArr[2*t+1]); 
 			}
-			
 			maxDoc[t] = weight;
 		}
 	}

@@ -62,7 +62,7 @@ public class makeKeyword {
 					bodystr+=kwrd.getString() + ": " + kwrd.getCnt()+"#";
 					}
 					System.out.println();
-				}
+			}
 				
 			
 			//파일 write 

@@ -96,9 +96,9 @@ public class indexer {
 				}
 				}
 				//iterator로 tfxMap에 없던 것들은 0.0 으로초기화 
-				Iterator <String> itstr = dfxMap.keySet().iterator();
-				while(itstr.hasNext()) {
-					String keys = itstr.next();
+			Iterator <String> itstr = dfxMap.keySet().iterator();
+			while(itstr.hasNext()) {
+				String keys = itstr.next();
 					if(tfxMap.get(keys) == null) {
 						if(wfxMap.get(keys) == null) { // 존재하지 않을 때
 							wfxMap.put(keys, Integer.toString(i)+ " 0.00");
